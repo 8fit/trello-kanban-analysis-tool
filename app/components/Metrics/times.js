@@ -90,6 +90,7 @@ const avgLeadTime = R.compose(
   Math.round.bind(Math),
   R.mean,
   R.reject(R.isNil),
+  R.reject((number) => number <= 0),
   R.pluck('leadTime')
 );
 
